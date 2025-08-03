@@ -14,6 +14,7 @@ export default function Login({ onSuccess }) {
             onSuccess();
         } else {
             setError("Contraseña incorrecta. Intentá de nuevo 🍸");
+            setPasswordInput("");
         }
     };
 
