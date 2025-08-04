@@ -494,3 +494,39 @@ strong {
     height: 2px;
   }
 }
+
+.title{
+  font-size: 4rem;
+  margin: 0 0 2rem 0;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  width: 50%;
+  margin: 0 auto;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.music-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.76);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.6rem 0.7rem;
+  width: 60px;
+  color: #fff;
+  transition: background 0.3s, transform 0.2s;
+  backdrop-filter: blur(10px); 
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); 
+  z-index: 999;
+}
+
+.music-toggle:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}

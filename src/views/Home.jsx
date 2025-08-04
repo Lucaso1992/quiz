@@ -1,12 +1,47 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './Home.css'
 import useAppContext from "../store/AppContext.jsx"
 import Login from "../components/login/Login.jsx"
 import monk from "../assets/monje.png";
+import music from "../assets/the-mission.mp3";
 
 function Home() {
   const { store } = useAppContext();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [audioInstance, setAudioInstance] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    const audio = new Audio(music);
+    audio.loop = true;
+    audio.volume = 0.4;
+    setAudioInstance(audio);
+
+    const handleUserInteraction = () => {
+      audio.play().then(() => setIsPlaying(true)).catch((err) => {
+        console.log("Autoplay bloqueado:", err);
+      });
+      window.removeEventListener('click', handleUserInteraction);
+    };
+
+    window.addEventListener('click', handleUserInteraction);
+
+    return () => {
+      window.removeEventListener('click', handleUserInteraction);
+      audio.pause();
+    };
+  }, []);
+
+  const toggleMusic = () => {
+    if (!audioInstance) return;
+    if (isPlaying) {
+      audioInstance.pause();
+      setIsPlaying(false);
+    } else {
+      audioInstance.play();
+      setIsPlaying(true);
+    }
+  };
 
   const handleLoginSuccess = () => {
     setIsLoggedIn(true);
@@ -38,11 +73,11 @@ function Home() {
           <>
             <div className="content_wrapper">
               <div className="text_buttons_container">
-                <h1>¡Hola, Lucas!</h1>
-                <h2>Llegó la hora de poner a prueba tu conocimiento.</h2>
-                <div className="subtitle_container">
-                  <h2>¿Estás listo para dominar el ranking?</h2>
-                </div>
+                <h1 className='title'>Hola, Lucas</h1>
+                <h2 className='subtitle'>
+                  El camino del Analytics Engineer está forjado por la curiosidad y la sabiduría.
+                  Pon a prueba tus conocimientos y fortalecé tus habilidades.
+                </h2>
                 <div className="buttons_container">
                   <button type="button" className="btn btn-calido">
                     <strong>QUIZZES</strong>
@@ -63,12 +98,20 @@ function Home() {
                 </div>
               </div>
             </div>
-              <img src={monk} className="monje" alt="monje" loading="eager" />
+            <img src={monk} className="monje" alt="monje" loading="eager" />
+
+            <button
+              className="music-toggle"
+              onClick={toggleMusic}
+              title={isPlaying ? "Pausar música" : "Reanudar música"}
+            >
+              {isPlaying ? '🎵' : '🔇'}
+            </button>
           </>
         )}
       </div>
     </>
-  )
+  );
 }
 
 export default Home;
