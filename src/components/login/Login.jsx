@@ -1,8 +1,10 @@
 import { useState } from "react";
 import styles from "./Login.module.css";
+import drink from "../../assets/drink.png"
 
 export default function Login({ onSuccess }) {
     const [passwordInput, setPasswordInput] = useState("");
+    const [name, setName] = useState("");
     const [error, setError] = useState("");
 
     const PASSWORD = "Cocktail25";
@@ -13,7 +15,7 @@ export default function Login({ onSuccess }) {
             setError("");
             onSuccess();
         } else {
-            setError("Contraseña incorrecta. Intentá de nuevo 🍸");
+            setError("Contraseña incorrecta. Intentá de nuevo");
             setPasswordInput("");
         }
     };
@@ -25,15 +27,22 @@ export default function Login({ onSuccess }) {
                 <div className={styles.content}>
                     <div className={styles.titles}>
                         <h1 className={styles.title}>¡Bienvenido, cocktelero!</h1>
-                        <h1 className={styles.emoji}>🍸</h1>
+                        <img src={drink} className={styles.emoji} alt="drink" />
                     </div>
                     <h2>Ingresa la password super secreta.</h2>
                     <form className={styles.form} onSubmit={handleSubmit}>
                         <input
+                            type="text"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            placeholder="Nombre"
+                            className={styles.input}
+                        />
+                         <input
                             type="password"
                             value={passwordInput}
                             onChange={(e) => setPasswordInput(e.target.value)}
-                            placeholder="Password"
+                            placeholder="Contraseña"
                             className={styles.input}
                         />
                         <div className={styles.container} type="submit">

@@ -8,206 +8,197 @@
 body {
   min-height: 100vh;
   margin: 0;
-  background: radial-gradient(
-    circle at center,
-    rgba(255, 255, 255, 0.09) 0%,   /* más blanco */
-    rgba(0, 0, 0, 0.9) 40%,
-    #000 70%
-  );
-  background-color: #000;
+  background: radial-gradient(circle at center,
+      rgba(200, 132, 252, 0.15) 0%,
+      rgba(2, 6, 23, 0.9) 60%,
+      #020617 100%);
+  background-color: #020617;
   color: #fff;
   font-family: 'Inter', sans-serif;
-}
-
-/*
-More comprehensive version at shenanigans.shoghisimon.ca/collection/css-rain-bg/
- */
-
-body::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background-image: radial-gradient(
-    ellipse 1.5px 2px at 1.5px 50%,
-    #0000 0,
-    #0000 90%,
-    #000 100%
-  );
-  background-size: 25px 8px;
-}
-
-body {
   position: relative;
   width: 100%;
   height: 100%;
-  --c: rgba(0, 153, 255, 0.158);
-  background-color: #000;
-  background-image: radial-gradient(4px 100px at 0px 235px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 235px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 117.5px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 252px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 252px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 126px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 150px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 150px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 75px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 253px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 253px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 126.5px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 204px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 204px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 102px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 134px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 134px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 67px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 179px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 179px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 89.5px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 299px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 299px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 149.5px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 215px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 215px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 107.5px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 281px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 281px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 140.5px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 158px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 158px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 79px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 210px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 210px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 105px, var(--c) 100%, #0000 150%);
-  background-size:
-    300px 235px,
-    300px 235px,
-    300px 235px,
-    300px 252px,
-    300px 252px,
-    300px 252px,
-    300px 150px,
-    300px 150px,
-    300px 150px,
-    300px 253px,
-    300px 253px,
-    300px 253px,
-    300px 204px,
-    300px 204px,
-    300px 204px,
-    300px 134px,
-    300px 134px,
-    300px 134px,
-    300px 179px,
-    300px 179px,
-    300px 179px,
-    300px 299px,
-    300px 299px,
-    300px 299px,
-    300px 215px,
-    300px 215px,
-    300px 215px,
-    300px 281px,
-    300px 281px,
-    300px 281px,
-    300px 158px,
-    300px 158px,
-    300px 158px,
-    300px 210px,
-    300px 210px,
-    300px 210px;
-  animation: hi 150s linear infinite;
+  overflow: hidden;
 }
 
-@keyframes hi {
-  0% {
-    background-position:
-      0px 220px,
-      3px 220px,
-      151.5px 337.5px,
-      25px 24px,
-      28px 24px,
-      176.5px 150px,
-      50px 16px,
-      53px 16px,
-      201.5px 91px,
-      75px 224px,
-      78px 224px,
-      226.5px 350.5px,
-      100px 19px,
-      103px 19px,
-      251.5px 121px,
-      125px 120px,
-      128px 120px,
-      276.5px 187px,
-      150px 31px,
-      153px 31px,
-      301.5px 120.5px,
-      175px 235px,
-      178px 235px,
-      326.5px 384.5px,
-      200px 121px,
-      203px 121px,
-      351.5px 228.5px,
-      225px 224px,
-      228px 224px,
-      376.5px 364.5px,
-      250px 26px,
-      253px 26px,
-      401.5px 105px,
-      275px 75px,
-      278px 75px,
-      426.5px 180px;
+.floating-element {
+  position: fixed;
+  border-radius: 50%;
+  opacity: 0.6;
+  z-index: 1;
+  pointer-events: none;
+  filter: blur(1px);
+}
+
+.floating-element-1 {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #ec4899, #f97316);
+  top: 15%;
+  left: 10%;
+  animation: floatGitHub 12s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.floating-element-2 {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  top: 70%;
+  right: 15%;
+  animation: floatGitHub 10s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+.floating-element-3 {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+  top: 30%;
+  right: 25%;
+  animation: floatGitHub 14s ease-in-out infinite;
+  animation-delay: -6s;
+}
+
+.floating-element-4 {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #f59e0b, #ec4899);
+  bottom: 25%;
+  left: 20%;
+  animation: floatGitHub 11s ease-in-out infinite;
+  animation-delay: -9s;
+}
+
+.floating-element-5 {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #10b981, #06b6d4);
+  top: 10%;
+  right: 40%;
+  animation: floatGitHub 13s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+.particle {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+}
+
+.particle-1 {
+  top: 20%;
+  left: 25%;
+  animation: twinkleGitHub 3s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.particle-2 {
+  top: 60%;
+  left: 70%;
+  animation: twinkleGitHub 4s ease-in-out infinite;
+  animation-delay: -1s;
+}
+
+.particle-3 {
+  top: 80%;
+  right: 30%;
+  animation: twinkleGitHub 3.5s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+.particle-4 {
+  top: 40%;
+  left: 15%;
+  animation: twinkleGitHub 2.8s ease-in-out infinite;
+  animation-delay: -0.5s;
+}
+
+.particle-5 {
+  top: 15%;
+  right: 20%;
+  animation: twinkleGitHub 4.2s ease-in-out infinite;
+  animation-delay: -1.8s;
+}
+
+.particle-6 {
+  bottom: 30%;
+  left: 60%;
+  animation: twinkleGitHub 3.8s ease-in-out infinite;
+  animation-delay: -2.5s;
+}
+
+.particle-7 {
+  top: 50%;
+  right: 10%;
+  animation: twinkleGitHub 3.2s ease-in-out infinite;
+  animation-delay: -1.2s;
+}
+
+.particle-8 {
+  bottom: 15%;
+  right: 50%;
+  animation: twinkleGitHub 4.5s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+@keyframes floatGitHub {
+
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
   }
 
-  to {
-    background-position:
-      0px 6800px,
-      3px 6800px,
-      151.5px 6917.5px,
-      25px 13632px,
-      28px 13632px,
-      176.5px 13758px,
-      50px 5416px,
-      53px 5416px,
-      201.5px 5491px,
-      75px 17175px,
-      78px 17175px,
-      226.5px 17301.5px,
-      100px 5119px,
-      103px 5119px,
-      251.5px 5221px,
-      125px 8428px,
-      128px 8428px,
-      276.5px 8495px,
-      150px 9876px,
-      153px 9876px,
-      301.5px 9965.5px,
-      175px 13391px,
-      178px 13391px,
-      326.5px 13540.5px,
-      200px 14741px,
-      203px 14741px,
-      351.5px 14848.5px,
-      225px 18770px,
-      228px 18770px,
-      376.5px 18910.5px,
-      250px 5082px,
-      253px 5082px,
-      401.5px 5161px,
-      275px 6375px,
-      278px 6375px,
-      426.5px 6480px;
+  25% {
+    transform: translateY(-30px) translateX(10px) rotate(90deg);
+  }
+
+  50% {
+    transform: translateY(-15px) translateX(-10px) rotate(180deg);
+  }
+
+  75% {
+    transform: translateY(-40px) translateX(15px) rotate(270deg);
   }
 }
 
+@keyframes twinkleGitHub {
 
-.intro_container{
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.intro_container {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 4rem;
+  flex-wrap: wrap;
 }
-.trofeo{
+
+.intro_text {
+  text-align: center;
+  max-width: 600px;
+}
+
+.trofeo {
   margin: 0 0 0 0;
 }
+
 .home_container {
   display: flex;
   justify-content: center;
@@ -215,34 +206,46 @@ body {
   align-items: center;
   position: relative;
   z-index: 10;
-  
+  height: 100vh;
+  width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-8px);
   }
 }
+
 .monje {
-  font-size: 5rem;
-  margin: 1rem 0 0 0;
-  display: inline-block;
+  width: 180px;
+  height: auto;
   animation: float 2s ease-in-out infinite;
+  display: inline-block;
+   filter: drop-shadow(0 0 50px rgba(0, 255, 170, 0.7)) drop-shadow(0 0 10px rgba(0, 200, 255, 0.5));
+  position: absolute;
+  right: 1px;
 }
 
-.subtitle_container{
+.subtitle_container {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -262,7 +265,6 @@ body {
   color: #888;
 }
 
-/* From Uiverse.io by StealthWorm */ 
 .btn {
   display: flex;
   justify-content: center;
@@ -278,13 +280,11 @@ body {
   animation: gradient_301 5s ease infinite;
   border: double 4px transparent;
   background-image: linear-gradient(#212121, #212121),
-    linear-gradient(
-      137.48deg,
+    linear-gradient(137.48deg,
       #ffdb3b 10%,
       #fe53bb 45%,
       #8f51ea 67%,
-      #0044ff 87%
-    );
+      #0044ff 87%);
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
@@ -442,33 +442,28 @@ strong {
 
 .buttons_container {
   display: flex;
+  justify-content: center;
   gap: 3rem;
   margin-top: 4rem;
 }
 
-/* === Botón cálido === */
 .btn-calido {
   background-image: linear-gradient(#212121, #212121),
-    linear-gradient(
-      137.48deg,
-      #ffd700 10%,   /* amarillo oro */
-      #ff8c00 45%,   /* naranja fuerte */
-      #ff4500 75%    /* rojo intenso */
-    );
+    linear-gradient(137.48deg,
+      #ffd700 10%,
+      #ff8c00 45%,
+      #ff4500 75%);
 }
 
-/* === Botón frío === */
 .btn-frio {
   background-image: linear-gradient(#212121, #212121),
-    linear-gradient(
-      137.48deg,
-      #00ff87 10%,   /* verde lima */
-      #0099ff 45%,   /* azul medio */
-      #8a2be2 75%    /* violeta oscuro */
-    );
+    linear-gradient(137.48deg,
+      #00ff87 10%,
+      #0099ff 45%,
+      #8a2be2 75%);
 }
 
-.btn-calido:hover{
+.btn-calido:hover {
   filter: drop-shadow(0 0 1em #61dafbaa);
 }
 
@@ -476,3 +471,26 @@ strong {
   filter: drop-shadow(0 0 1em #646cffaa);
 }
 
+@media (max-width: 768px) {
+  .floating-element {
+    opacity: 0.4;
+  }
+
+  .floating-element-1,
+  .floating-element-2,
+  .floating-element-4 {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .floating-element-3,
+  .floating-element-5 {
+    width: 35px !important;
+    height: 35px !important;
+  }
+
+  .particle {
+    width: 2px;
+    height: 2px;
+  }
+}
