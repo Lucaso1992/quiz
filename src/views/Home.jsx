@@ -105,7 +105,7 @@ function Home() {
               onClick={toggleMusic}
               title={isPlaying ? "Pausar música" : "Reanudar música"}
             >
-              {isPlaying ? '🎵' : '🔇'}
+             {isPlaying ? '❚❚' : '►'}
             </button>
           </>
         )}
