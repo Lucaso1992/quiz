@@ -30,7 +30,7 @@ export default function Login({ onSuccess }) {
                         <h1 className={styles.title}>¡Bienvenido, cocktelero!</h1>
                         <img src={drink} className={styles.emoji} alt="drink" />
                     </div>
-                    <h2>Ingresa la password super secreta.</h2>
+                    <h2>Ingresa tu nombre y la password super secreta.</h2>
                     <form className={styles.form} onSubmit={handleSubmit}>
                         <input
                             type="text"
