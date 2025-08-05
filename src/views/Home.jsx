@@ -76,7 +76,7 @@ function Home() {
                 <h1 className='title'>Hola, {store.inputName}</h1>
                 <h2 className='subtitle'>
                   El camino del Analytics Engineer está forjado por la curiosidad y sabiduría.
-                  Pon a prueba tus conocimientos y fortalecé tus habilidades.
+                  Pon a prueba tus conocimientos y fortalece tus habilidades.
                 </h2>
                 <div className="buttons_container">
                   <button type="button" className="btn btn-calido">
