@@ -73,9 +73,9 @@ function Home() {
           <>
             <div className="content_wrapper">
               <div className="text_buttons_container">
-                <h1 className='title'>Hola, Lucas</h1>
+                <h1 className='title'>Hola, {store.inputName}</h1>
                 <h2 className='subtitle'>
-                  El camino del Analytics Engineer está forjado por la curiosidad y la sabiduría.
+                  El camino del Analytics Engineer está forjado por la curiosidad y sabiduría.
                   Pon a prueba tus conocimientos y fortalecé tus habilidades.
                 </h2>
                 <div className="buttons_container">

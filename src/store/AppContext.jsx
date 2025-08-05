@@ -3,8 +3,9 @@ import { useContext, createContext, useState, useEffect } from "react";
 const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  const store = {}
-  const actions = {};
+  const [inputName, setInputName] = useState("");
+  const store = {inputName}
+  const actions = {setInputName};
 
 
   return (

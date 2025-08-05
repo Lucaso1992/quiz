@@ -1,10 +1,11 @@
 import { useState } from "react";
 import styles from "./Login.module.css";
 import drink from "../../assets/drink.png"
+import useAppContext from "../../store/AppContext";
 
 export default function Login({ onSuccess }) {
+    const { store, actions } = useAppContext();
     const [passwordInput, setPasswordInput] = useState("");
-    const [name, setName] = useState("");
     const [error, setError] = useState("");
 
     const PASSWORD = "Cocktail25";
@@ -33,8 +34,8 @@ export default function Login({ onSuccess }) {
                     <form className={styles.form} onSubmit={handleSubmit}>
                         <input
                             type="text"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
+                            value={store.inputName}
+                            onChange={(e) => actions.setInputName(e.target.value)}
                             placeholder="Nombre"
                             className={styles.input}
                         />
